@@ -1,0 +1,25 @@
+server {
+  listen   <%= @listen_port %>;
+  server_name  <%= @fqdn %>;
+
+  access_log /var/log/nginx/selenium.access.log;
+  error_log /var/log/nginx/selenium.error.log;
+
+  #These come from node['nexus']['nginx']['server']['options']
+  <% @server_options.each do |option|%>
+  <%= option %>;
+  <% end %>
+
+  location / {
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+
+    proxy_pass <%= @proxy_pass %>;
+
+    #These come from node['nexus']['nginx']['proxy']['options']
+    <% @proxy_options.each do |option|%>
+    <%= option %>;
+    <% end %>
+  }
+}
