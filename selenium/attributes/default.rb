@@ -35,7 +35,7 @@ default[:selenium][:proxy][:options]  = [
 
 case node[:kernel][:machine]
 when 'x86_64'
-	default[:selenium][:chromedriver][:url] = 'https://chromedriver.googlecode.com/files/chromedriver_linux64_2.0.zip'
+	default[:selenium][:chromedriver][:url] = 'http://chromedriver.googlecode.com/files/chromedriver_linux64_2.1.zip'
 else
-	default[:selenium][:chromedriver][:url] = 'https://chromedriver.googlecode.com/files/chromedriver_linux32_2.0.zip'
+	default[:selenium][:chromedriver][:url] = 'http://chromedriver.googlecode.com/files/chromedriver_linux32_2.1.zip'
 end
