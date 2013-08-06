@@ -1,6 +1,6 @@
 Description
 ===========
-Setup high density selenium for linux node, supports opera/chrome/firefox/phantomjs instances.
+Setup high density selenium grid for linux node, supports opera/chrome/firefox/phantomjs instances.
 
 Requirements
 ============
@@ -32,11 +32,8 @@ See `attributes/default.rb` for default values.
 Recipes
 =======
 
-hub
----
-node
-----
-phantomjs
----------
+* hub
+* node
+* phantomjs
 
 
