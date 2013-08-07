@@ -3,7 +3,7 @@ maintainer       'Vlad Alyukov'
 maintainer_email 'valyukov@gmail.com'
 license          'Apache 2.0'
 description      'Installs/Configures Selenium/Phantomjs'
-version          '0.4.8'
+version          '0.4.9'
 
 %w(debian ubuntu).each do |os|
   supports os
