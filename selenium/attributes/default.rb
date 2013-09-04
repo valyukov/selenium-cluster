@@ -1,4 +1,4 @@
-default[:selenium][:version] = '2.33.0'
+default[:selenium][:version] = '2.35.0'
 default[:selenium][:path] = '/opt/selenium/'
 default[:selenium][:jar] = "#{node[:selenium][:path]}selenium-server-standalone.jar"
 
@@ -35,7 +35,7 @@ default[:selenium][:proxy][:options]  = [
 
 case node[:kernel][:machine]
 when 'x86_64'
-	default[:selenium][:chromedriver][:url] = 'http://chromedriver.googlecode.com/files/chromedriver_linux64_2.2.zip'
+	default[:selenium][:chromedriver][:url] = 'http://chromedriver.googlecode.com/files/chromedriver_linux64_2.3.zip'
 else
-	default[:selenium][:chromedriver][:url] = 'http://chromedriver.googlecode.com/files/chromedriver_linux32_2.2.zip'
+	default[:selenium][:chromedriver][:url] = 'http://chromedriver.googlecode.com/files/chromedriver_linux32_2.3.zip'
 end
