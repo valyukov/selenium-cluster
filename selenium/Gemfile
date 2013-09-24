@@ -1,0 +1,5 @@
+source 'https://rubygems.org'
+gem 'berkshelf'
+gem 'foodcritic'
+gem 'vagrant-berkshelf'
+gem 'vagrant-omnibus', '~> 1.1.1'
