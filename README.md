@@ -32,8 +32,8 @@ See `attributes/default.rb` for default values.
 Recipes
 =======
 
-* hub
-* node
-* phantomjs
+* selenium::hub
+* selenium::node
+* selenium::phantomjs
 
 

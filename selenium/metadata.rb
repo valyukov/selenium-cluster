@@ -10,4 +10,3 @@ version          '0.4.9'
 end
 
 %w{ark phantomjs google-chrome apt java nginx}.each { |cb| depends cb }
-
