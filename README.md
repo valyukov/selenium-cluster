@@ -35,5 +35,5 @@ Recipes
 * selenium::hub
 * selenium::node
 * selenium::phantomjs
-
+* selenium::proxy
 
