@@ -14,7 +14,7 @@ node[:selenium][:phantomjs][:instances].each do | number |
 	service	job do
 		provider Chef::Provider::Service::Upstart
 		supports :restart => true
-		action [ :enable ]
+		action [ :enable, :start ]
 		subscribes :restart, "template[/etc/init/#{job}.conf]", :delayed
 	end
 end
