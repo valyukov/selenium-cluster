@@ -7,6 +7,10 @@ describe 'selenium::node' do
     expect(chef_run).to include_recipe 'selenium'
   end
 
+  it 'include apt recipe' do
+    expect(chef_run).to include_recipe 'apt'
+  end
+
   it 'include google-chrome recipe' do 
     expect(chef_run).to include_recipe 'google-chrome'
   end  
