@@ -1,0 +1,34 @@
+---
+driver_plugin: vagrant
+driver_config:
+  require_chef_omnibus: true
+  use_vagrant_berkshelf_plugin: true
+  customize:
+    memory: 2048
+    cpus: 2
+
+provisioner:
+  name: chef_zero
+
+platforms:
+  - name: ubuntu-12.04
+
+suites:
+  - name: default
+    run_list:
+      - recipe[selenium::hub]
+      - recipe[selenium::node]
+      - recipe[selenium::phantomjs]
+
+    attributes:
+      java:
+        jdk_version: 7
+
+  - name: phantomjs
+    run_list:
+      - recipe[selenium::hub]
+      - recipe[selenium::phantomjs]
+
+    attributes:
+      java:
+        jdk_version: 7

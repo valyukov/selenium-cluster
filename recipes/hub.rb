@@ -1,8 +1,7 @@
 include_recipe 'selenium'
-include_recipe 'selenium::proxy'
 
-template "/etc/init/hub.conf" do
-  source "hub.conf.erb"
+template '/etc/init/hub.conf' do
+  source 'hub.conf.erb'
   variables(
         :user => node[:selenium][:hub][:user],
         :port => node[:selenium][:hub][:port],
@@ -11,9 +10,9 @@ template "/etc/init/hub.conf" do
   )
 end
 
-service "hub" do
+service 'hub' do
   provider Chef::Provider::Service::Upstart
   supports :status => true, :restart => true
   action [ :enable, :start ]
-  subscribes :restart, "template[/etc/init/hub.conf]", :immediately
+  subscribes :restart, 'template[/etc/init/hub.conf]', :immediately
 end
