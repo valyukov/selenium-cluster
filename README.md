@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/valyukov/selenium-cluster.svg?branch=master)](https://travis-ci.org/valyukov/selenium-cluster)
+
 Description
 ===========
 Setup high density selenium grid for linux node, supports opera/chrome/firefox/phantomjs instances.
