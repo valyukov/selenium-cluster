@@ -6,8 +6,8 @@ Requirements
 ============
 
 ## Platform:
-* Ubuntu
-* Debian
+* Ubuntu 12.04
+* Ubuntu 14.04
 
 ## Hardware:
 
@@ -31,6 +31,6 @@ See `attributes/default.rb` for default values.
 Recipes
 =======
 
-* selenium::hub
-* selenium::node
-* selenium::phantomjs
+* selenium-cluster::hub
+* selenium-cluster::node
+* selenium-cluster::phantomjs

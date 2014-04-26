@@ -14,12 +14,13 @@ provisioner:
 
 platforms:
   - name: ubuntu-12.04
+  - name: ubuntu-14.04
 
 suites:
   - name: default
     run_list:
-      - recipe[selenium::hub]
-      - recipe[selenium::node]
+      - recipe[selenium-cluster::hub]
+      - recipe[selenium-cluster::node]
 
     attributes:
       java:
@@ -27,8 +28,8 @@ suites:
 
   - name: phantomjs
     run_list:
-      - recipe[selenium::hub]
-      - recipe[selenium::phantomjs]
+      - recipe[selenium-cluster::hub]
+      - recipe[selenium-cluster::phantomjs]
 
     attributes:
       java:

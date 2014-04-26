@@ -20,7 +20,7 @@ default[:selenium][:chromedriver][:directory] = '/usr/local/bin'
 
 case node[:kernel][:machine]
 when 'x86_64'
-	default[:selenium][:chromedriver][:url] = 'http://chromedriver.storage.googleapis.com/2.9/chromedriver_linux64.zip'
+  default[:selenium][:chromedriver][:url] = 'http://chromedriver.storage.googleapis.com/2.9/chromedriver_linux64.zip'
 else
-	default[:selenium][:chromedriver][:url] = 'http://chromedriver.storage.googleapis.com/2.9/chromedriver_linux32.zip'
+  default[:selenium][:chromedriver][:url] = 'http://chromedriver.storage.googleapis.com/2.9/chromedriver_linux32.zip'
 end

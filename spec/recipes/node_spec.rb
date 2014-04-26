@@ -1,21 +1,21 @@
-require 'spec_helper' 
+require 'spec_helper'
 
-describe 'selenium::node' do
+describe 'selenium-cluster::node' do
   let(:chef_run) { ChefSpec::Runner.new.converge(described_recipe) }
-  
-  it 'include selenium recipe' do 
-    expect(chef_run).to include_recipe 'selenium'
+
+  it 'include selenium recipe' do
+    expect(chef_run).to include_recipe 'selenium-cluster'
   end
 
   it 'include apt recipe' do
     expect(chef_run).to include_recipe 'apt'
   end
 
-  it 'include google-chrome recipe' do 
+  it 'include google-chrome recipe' do
     expect(chef_run).to include_recipe 'google-chrome'
-  end  
+  end
 
-  it 'include ark recipe' do 
+  it 'include ark recipe' do
     expect(chef_run).to include_recipe 'ark'
   end
 
@@ -23,15 +23,15 @@ describe 'selenium::node' do
     expect(chef_run).to add_apt_repository 'opera'
   end
 
-  %w(firefox xvfb opera).each do  |package|
+  %w(firefox xvfb opera).each do |package|
     it "install package #{package}" do
       expect(chef_run).to install_package package
     end
   end
 
-  it 'create user browser' do 
+  it 'create user browser' do
     expect(chef_run).to create_user 'browser'
-  end 
+  end
 
   it 'create selenium user home' do
     expect(chef_run).to create_directory '/var/lib/browser'
@@ -40,11 +40,11 @@ describe 'selenium::node' do
   it 'change chromedriver acceess right' do
     expect(chef_run).to create_file '/usr/local/bin/chromedriver'
   end
-  
-  (1..10).each do | num | 
-    it 'render template[/etc/init/browser-node-#{num}.conf]' do 
+
+  (1..10).each do | num |
+    it 'render template[/etc/init/browser-node-#{num}.conf]' do
       expect(chef_run).to render_file("/etc/init/browser-node-#{num}.conf").with_content('-role node')
-    end 
+    end
     it 'service browser-node subscribed to template[/etc/init/browser-node-#{num}.conf]' do
       resource = chef_run.service("browser-node-#{num}")
       expect(resource).to subscribe_to("template[/etc/init/browser-node-#{num}.conf]").on(:restart).delayed

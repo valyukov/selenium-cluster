@@ -1,18 +1,18 @@
 require 'spec_helper'
 
-describe 'selenium::default' do
+describe 'selenium-cluster::default' do
   let(:chef_run) { ChefSpec::Runner.new.converge(described_recipe) }
-  it 'include apt recipe' do 
+  it 'include apt recipe' do
     expect(chef_run).to include_recipe 'apt'
   end
 
-  it 'include java::default recipe' do 
+  it 'include java::default recipe' do
     expect(chef_run).to include_recipe 'java::default'
-  end 
+  end
 
-  it 'include java::openjdk recipe' do 
+  it 'include java::openjdk recipe' do
     expect(chef_run).to include_recipe 'java::openjdk'
-  end 
+  end
 
   it 'create selenium directory' do
     expect(chef_run).to create_directory '/opt/selenium/'

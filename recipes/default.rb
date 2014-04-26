@@ -14,4 +14,3 @@ remote_file node[:selenium][:jar] do
   action :create
   mode 0644
 end
-

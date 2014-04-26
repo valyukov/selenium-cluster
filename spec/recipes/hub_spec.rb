@@ -1,10 +1,10 @@
 require 'spec_helper'
 
-describe 'selenium::hub' do
+describe 'selenium-cluster::hub' do
   let(:chef_run) { ChefSpec::Runner.new.converge(described_recipe) }
-  
-  it 'include selenium recipe' do 
-    expect(chef_run).to include_recipe 'selenium'
+
+  it 'include selenium recipe' do
+    expect(chef_run).to include_recipe 'selenium-cluster'
   end
 
   it 'enable service hub' do
@@ -23,5 +23,4 @@ describe 'selenium::hub' do
     resource = chef_run.service('hub')
     expect(resource).to subscribe_to('template[/etc/init/hub.conf]').on(:restart).immediately
   end
-  
 end

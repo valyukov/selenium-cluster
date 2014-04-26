@@ -1,15 +1,14 @@
 #ruby=2.1.0@selenium
 
-source 'http://rubygems.org'
+source 'https://rubygems.org'
 
-gem 'test-kitchen'
-gem 'berkshelf'
-gem 'serverspec'
-gem 'chefspec'
-gem 'foodcritic'
-gem 'rubocop'
+gem 'chefspec',   '~> 3.4'
+gem 'berkshelf',  '~> 3.1.0'
+gem 'rake'
+gem 'rubocop',    '~> 0.21.0'
 
 group :integration do
-  gem 'kitchen-vagrant'
+  gem 'test-kitchen',    '~> 1.2'
+  gem 'kitchen-vagrant', '~> 0.14'
+  gem 'serverspec', '~> 1.4'
 end
-
