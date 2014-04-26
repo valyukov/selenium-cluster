@@ -6,6 +6,8 @@ driver_config:
   customize:
     memory: 2048
     cpus: 2
+  network:
+        - ["forwarded_port", {guest: 4444, host: 4444}]
 
 provisioner:
   name: chef_zero
@@ -18,7 +20,6 @@ suites:
     run_list:
       - recipe[selenium::hub]
       - recipe[selenium::node]
-      - recipe[selenium::phantomjs]
 
     attributes:
       java:
