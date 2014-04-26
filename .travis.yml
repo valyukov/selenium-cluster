@@ -10,4 +10,4 @@ branches:
     - master
 
 script:
-  - bundle exec rake travis:ci
+  - bundle exec rake ci
