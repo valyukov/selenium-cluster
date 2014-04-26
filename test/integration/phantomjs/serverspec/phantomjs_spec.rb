@@ -1,4 +1,4 @@
-require_relative '/../../spec_helper'
+require_relative '../../../kitchen/data/spec_helper'
 
 (1..10).to_a.each do | n |
   describe service("phantomjs-#{n}") do

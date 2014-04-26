@@ -1,4 +1,4 @@
-require_relative '../../spec_helper'
+require_relative '../../../kitchen/data/spec_helper'
 
 describe user('browser') do
   it { should exist }
