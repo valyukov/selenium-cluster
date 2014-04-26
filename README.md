@@ -21,7 +21,6 @@ memory: 8Gb
 * google-chrome 
 * apt 
 * java 
-* nginx
 
 Attributes
 ==========
@@ -35,5 +34,3 @@ Recipes
 * selenium::hub
 * selenium::node
 * selenium::phantomjs
-* selenium::proxy
-
