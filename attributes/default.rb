@@ -1,4 +1,4 @@
-default[:selenium][:url] = 'http://selenium-release.storage.googleapis.com/2.41/selenium-server-standalone-2.41.0.jar'
+default[:selenium][:url] = 'http://selenium-release.storage.googleapis.com/2.42/selenium-server-standalone-2.42.2.jar'
 
 case node[:platform_family]
 when 'windows'
@@ -26,7 +26,7 @@ default[:selenium][:chromedriver][:directory] = '/usr/local/bin'
 
 case node[:kernel][:machine]
 when 'x86_64'
-  default[:selenium][:chromedriver][:url] = 'http://chromedriver.storage.googleapis.com/2.9/chromedriver_linux64.zip'
+  default[:selenium][:chromedriver][:url] = 'http://chromedriver.storage.googleapis.com/2.10/chromedriver_linux64.zip'
 else
-  default[:selenium][:chromedriver][:url] = 'http://chromedriver.storage.googleapis.com/2.9/chromedriver_linux32.zip'
+  default[:selenium][:chromedriver][:url] = 'http://chromedriver.storage.googleapis.com/2.10/chromedriver_linux32.zip'
 end
