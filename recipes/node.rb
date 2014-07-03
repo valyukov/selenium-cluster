@@ -13,8 +13,12 @@ end
 
 package 'firefox'
 package 'xvfb'
-package 'opera'
 
+package 'opera' do
+  options '--force-yes'
+  action :install
+end
+  
 user_dir = File.join('/var/lib/', node[:selenium][:node][:user])
 
 user node[:selenium][:node][:user] do

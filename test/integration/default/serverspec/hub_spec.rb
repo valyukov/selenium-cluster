@@ -13,10 +13,6 @@ describe port(4444) do
   it { should be_listening }
 end
 
-describe package('openjdk-7-jdk') do
-  it { should be_installed }
-end
-
 describe file('/opt/selenium/') do
   it { should be_directory }
 end

@@ -6,12 +6,12 @@ describe 'selenium-cluster::default' do
     expect(chef_run).to include_recipe 'apt'
   end
 
-  it 'include java::default recipe' do
-    expect(chef_run).to include_recipe 'java::default'
+  it 'include java recipe' do
+    expect(chef_run).to include_recipe 'java'
   end
 
-  it 'include java::openjdk recipe' do
-    expect(chef_run).to include_recipe 'java::openjdk'
+  it 'include java::default_java_symlink recipe' do
+    expect(chef_run).to include_recipe 'java::default_java_symlink'
   end
 
   it 'create selenium directory' do

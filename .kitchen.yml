@@ -16,13 +16,7 @@ provisioner:
 
 platforms:
   - name: ubuntu-12.04
-    attributes:
-      java:
-        jdk_version: 7
   - name: ubuntu-14.04
-    attributes:
-      java:
-        jdk_version: 7
 
 suites:
   - name: default

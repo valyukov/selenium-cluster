@@ -30,3 +30,11 @@ when 'x86_64'
 else
   default[:selenium][:chromedriver][:url] = 'http://chromedriver.storage.googleapis.com/2.10/chromedriver_linux32.zip'
 end
+
+# run apt-get update in compile time
+default[:apt][:compile_time_update] = true
+
+# java cookbook attributes
+default[:java][:jdk_version] = 7
+default[:java][:install_flavor] = 'oracle'
+default[:java][:oracle][:accept_oracle_download_terms] = true

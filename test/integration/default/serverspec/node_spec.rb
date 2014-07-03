@@ -17,7 +17,7 @@ end
   end
 end
 
-%w(opera openjdk-7-jdk xvfb firefox google-chrome-stable).each do | package |
+%w(opera xvfb firefox google-chrome-stable).each do | package |
   describe package(package) do
     it { should be_installed }
   end

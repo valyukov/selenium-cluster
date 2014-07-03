@@ -1,6 +1,6 @@
 include_recipe 'apt'
-include_recipe 'java::default'
-include_recipe 'java::openjdk'
+include_recipe 'java'
+include_recipe 'java::default_java_symlink'
 
 directory node[:selenium][:path] do
   owner 'root'
