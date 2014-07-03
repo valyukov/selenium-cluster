@@ -3,10 +3,6 @@ require 'spec_helper'
 describe 'selenium-cluster::phantomjs' do
   let(:chef_run) { ChefSpec::Runner.new(platform: 'ubuntu', version: '12.04').converge(described_recipe) }
 
-  before(:all) do 
-    stub_command("which nginx").and_return('/usr/bin/nginx')
-  end
-
   it 'include phantomjs::source recipe' do
     expect(chef_run).to include_recipe 'phantomjs::source'
   end
