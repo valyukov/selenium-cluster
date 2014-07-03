@@ -28,4 +28,3 @@ suites:
     run_list:
       - recipe[selenium-cluster::hub]
       - recipe[selenium-cluster::phantomjs]
-
