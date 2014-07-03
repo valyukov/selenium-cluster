@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 
 gem 'chefspec',   '~> 3.4'
 gem 'berkshelf',  '~> 3.1.0'
-gem 'rake'
+gem 'rake',       '~> 10.3.2'
 gem 'rubocop',    '~> 0.21.0'
 
 group :integration do

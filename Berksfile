@@ -1,7 +1,6 @@
 source "http://api.berkshelf.com"
 
+cookbook 'internet-explorer', github: 'valyukov/internet-explorer-cookbook'
+
 metadata
 
-group :integration do
-  cookbook 'minitest-handler'
-end

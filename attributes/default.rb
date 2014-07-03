@@ -1,6 +1,12 @@
 default[:selenium][:url] = 'http://selenium-release.storage.googleapis.com/2.41/selenium-server-standalone-2.41.0.jar'
 
-default[:selenium][:path] = '/opt/selenium/'
+case node[:platform_family]
+when 'windows'
+  default[:selenium][:path] = 'c:\\selenium\\'
+else
+  default[:selenium][:path] = '/opt/selenium/'
+end
+
 default[:selenium][:jar] = "#{node[:selenium][:path]}selenium-server-standalone.jar"
 
 default[:selenium][:node][:user] = 'browser'
