@@ -9,7 +9,7 @@ reboot = 'windows_reboot[30]'
 windows_zipfile node[:selenium][:path] do
   source node[:selenium][:iedriver][:url]
   action :unzip
-  overwrite true
+  not_if { ::File.exist?("#{node[:selenium][:path]}IEDriverServer.exe") }
   notifies :request, reboot, :delayed
 end
 
